@@ -23,13 +23,13 @@ h1 {
 }
 
 .subtitle {
-  color: #57c78a;
+  color: #1e8449;
   margin-top: 8px;
   font-size: 14px;
 }
 
 h2 {  
-  color: #1d6e3f;
+  color: #1e8449;
   font-size: 22px;
   text-align: center;
   margin-bottom: 8px;
@@ -122,4 +122,11 @@ form {
 
 .link:hover {
   color: #27ae60;
+}
+
+.btn-entrar:focus,
+.campo-input:focus,
+.link:focus {
+  outline: 2px solid #27ae60;
+  outline-offset: 2px;
 }
