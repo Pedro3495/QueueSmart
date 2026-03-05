@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #27ae60;
+  margin-top: 50px;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.subtitle {
+  color: #57c78a;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+h2 {  
+  color: #1d6e3f;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+form {
+  background-color: #f0faf5;
+  margin-top: 40px;
+  padding: 40px;
+  border-radius: 16px;
+  width: 380px;
+  border: none;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.campo-label {
+  display: block;
+  color: #27ae60;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 16px;
+  text-align: left;
+}
+
+.campo-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #b7e9d0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: #333333;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.campo-input:focus {
+  border-color: #27ae60;
+}
+
+.btn-entrar {
+  width: 100%;
+  margin-top: 24px;
+  padding: 12px;
+  background-color: #2ecc71;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-entrar:hover {
+  background-color: #27ae60;
+}
+
+.rodape-form {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666666;
+}
+
+.link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #2ecc71;
+  font-size: 13px;
+}
+
+.link:hover {
+  color: #27ae60;
+}
