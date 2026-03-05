@@ -15,6 +15,13 @@ body {
   align-items: center;
 }
 
+/*  HEADER  */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1 {
   color: #27ae60;
   margin-top: 50px;
@@ -28,7 +35,15 @@ h1 {
   font-size: 14px;
 }
 
-h2 {  
+/* MAIN */
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* FORM */
+h2 {
   color: #1d6e3f;
   font-size: 22px;
   text-align: center;
@@ -45,10 +60,24 @@ form {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* CAMPOS OBRIGATÓRIOS */
+.nota-obrigatorio {
+  font-size: 12px;
+  color: #555555;
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+.obrigatorio {
+  color: #c0392b;
+  font-weight: 700;
+}
+
+/* LABELS E INPUTS */
 .campo-label {
   display: block;
   color: #27ae60;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   margin-bottom: 6px;
   margin-top: 16px;
@@ -63,7 +92,6 @@ form {
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
   color: #333333;
-  outline: none;
   background-color: #ffffff;
 }
 
@@ -71,11 +99,12 @@ form {
   border-color: #27ae60;
 }
 
+/* BOTÃO */
 .btn-entrar {
   width: 100%;
   margin-top: 24px;
   padding: 12px;
-  background-color: #2ecc71;
+  background-color: #27ae60;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -86,9 +115,10 @@ form {
 }
 
 .btn-entrar:hover {
-  background-color: #27ae60;
+  background-color: #1e8449;
 }
 
+/* ── RODAPÉ DO FORM ── */
 .rodape-form {
   text-align: center;
   margin-top: 20px;
@@ -100,17 +130,37 @@ form {
   display: block;
   text-align: center;
   margin-top: 10px;
-  color: #2ecc71;
+  color: #27ae60;
   font-size: 13px;
+  font-weight: 600;
 }
 
 .link:hover {
-  color: #27ae60;
+  color: #1e8449;
 }
 
+/* FOOTER */
+footer {
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.link-footer {
+  color: #27ae60;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.link-footer:hover {
+  color: #1e8449;
+}
+
+/* FOCO VISÍVEL */
 .btn-entrar:focus,
 .campo-input:focus,
-.link:focus {
+.link:focus,
+.link-footer:focus {
   outline: 2px solid #27ae60;
   outline-offset: 2px;
 }

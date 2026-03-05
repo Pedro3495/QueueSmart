@@ -9,30 +9,40 @@
 </head>
 <body>
 
-  <h1>QueueSmart</h1>
-  <p class="subtitle">Sistema Inteligente de Fila para Pequenos Negócios</p>
+  <header>
+    <h1>QueueSmart</h1>
+    <p class="subtitle">Sistema Inteligente de Fila para Pequenos Negócios</p>
+  </header>
 
-  <form action="#" method="POST">
+  <main>
+    <form action="#" method="POST">
 
-    <h2>Login</h2>
+      <h2>Login</h2>
 
-    <label class="campo-label" for="email">E-mail</label>
-    <input class="campo-input" type="email" placeholder="seu@email.com" required  />
+      <p class="nota-obrigatorio"><span aria-hidden="true">*</span> Campos obrigatórios</p>
 
-    <label class="campo-label" for="senha">Senha</label>
-    <input class="campo-input" type="password" placeholder="Digite sua senha" required />
+      <label class="campo-label" for="email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input class="campo-input" type="email" id="email" autocomplete="email" placeholder="seu@email.com" required aria-required="true" />
 
-    <div class="lembrar">
-      <input class="campo-checkbox" type="checkbox" />
-      <label class="campo-label">Manter conectado</label>
-    </div>
+      <label class="campo-label" for="senha">Senha <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input class="campo-input" type="password" id="senha" autocomplete="current-password" placeholder="Digite sua senha" required aria-required="true" />
 
-    <button class="btn-entrar" type="submit">Entrar</button>
+      <div class="lembrar">
+        <input class="campo-checkbox" type="checkbox" id="lembrar" />
+        <label class="campo-label" for="lembrar">Manter conectado</label>
+      </div>
 
-    <p class="rodape-form">Não tem conta? <a class="link" href="cadastro.html">Cadastre-se</a></p>
-    <a class="link" href="recuperar.html">Esqueceu sua senha?</a>
+      <button class="btn-entrar" type="submit">Entrar</button>
 
-  </form>
+      <p class="rodape-form">Não tem conta? <a class="link" href="cadastro.html">Cadastre-se</a></p>
+      <a class="link" href="recuperar.html">Esqueceu sua senha?</a>
+
+    </form>
+  </main>
+
+  <footer>
+    <a class="link-footer" href="acessibilidade.html">Acessibilidade</a>
+  </footer>
 
 </body>
 </html>

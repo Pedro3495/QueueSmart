@@ -5,34 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QueueSmart - Cadastro</title>
   <link rel="stylesheet" href="style/cadastro.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <h1>QueueSmart</h1>
-  <p class="subtitle">Sistema Inteligente de Fila para Pequenos Negócios</p>
+  <header>
+    <h1>QueueSmart</h1>
+    <p class="subtitle">Sistema Inteligente de Fila para Pequenos Negócios</p>
+  </header>
 
-  <form action="#" method="POST">
+  <main>
+    <form action="#" method="POST">
 
-    <h2>Cadastre-se</h2>
+      <h2>Cadastre-se</h2>
 
-    <label class="campo-label" for="nome">Nome</label>
-    <input class="campo-input" type="name" placeholder="Digite Seu Nome" required />
+      <p class="nota-obrigatorio"><span aria-hidden="true">*</span> Campos obrigatórios</p>
 
-    <label class="campo-label" for="email">E-mail</label>
-    <input class="campo-input" type="email" placeholder="Digite Seu Email" required />
+      <label class="campo-label" for="nome">Nome <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input class="campo-input" type="text" id="nome" autocomplete="name" placeholder="Digite seu nome" required aria-required="true" />
 
-    <label class="campo-label" for="senha">Senha</label>
-    <input class="campo-input" type="password" placeholder="Digite sua senha" required />
+      <label class="campo-label" for="email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input class="campo-input" type="email" id="email" autocomplete="email" placeholder="Digite seu email" required aria-required="true" />
 
-    <label class="campo-label" for="confirmarSenha">Confirme sua Senha</label>
-    <input class="campo-input" type="password" placeholder="Digite sua senha" required />
+      <label class="campo-label" for="senha">Senha <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input class="campo-input" type="password" id="senha" autocomplete="new-password" placeholder="Digite sua senha" required aria-required="true" />
 
+      <label class="campo-label" for="confirmarSenha">Confirme sua Senha <span class="obrigatorio" aria-hidden="true">*</span></label>
+      <input class="campo-input" type="password" id="confirmarSenha" autocomplete="new-password" placeholder="Confirme sua senha" required aria-required="true" />
 
-    <button class="btn-entrar" type="submit">Cadastrar</button>
+      <button class="btn-entrar" type="submit">Cadastrar</button>
 
-    <p class="rodape-form">Já possui uma conta? <a class="link" href="login.html">Entrar</a></p>
+      <p class="rodape-form">Já possui uma conta? <a class="link" href="login.html">Entrar</a></p>
 
-  </form>
+    </form>
+  </main>
+
+  <footer>
+    <a class="link-footer" href="acessibilidade.html">Acessibilidade</a>
+  </footer>
 
 </body>
 </html>
