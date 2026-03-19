@@ -9,30 +9,37 @@
 </head>
 <body>
 
-  <header>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header aria-label="Cabeçalho do site">
     <h1>QueueSmart</h1>
     <p class="subtitle">Sistema Inteligente de Fila para Pequenos Negócios</p>
   </header>
 
-  <main>
-    <form action="#" method="POST">
+  <main id="conteudo-principal" aria-label="Página de login">
+    <form action="#" method="POST" aria-labelledby="titulo-login">
 
-      <h2>Login</h2>
+      <h2 id="titulo-login">Login</h2>
 
       <p class="nota-obrigatorio"><span aria-hidden="true">*</span> Campos obrigatórios</p>
 
-      <label class="campo-label" for="email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
-      <input class="campo-input" type="email" id="email" autocomplete="email" placeholder="seu@email.com" required aria-required="true" />
+      <fieldset>
+        <legend class="sr-only">Credenciais de acesso</legend>
 
-      <label class="campo-label" for="senha">Senha <span class="obrigatorio" aria-hidden="true">*</span></label>
-      <input class="campo-input" type="password" id="senha" autocomplete="current-password" placeholder="Digite sua senha" required aria-required="true" />
+        <label class="campo-label" for="email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+        <input class="campo-input" type="email" id="email" autocomplete="email" placeholder="seu@email.com" required aria-required="true" />
+
+        <label class="campo-label" for="senha">Senha <span class="obrigatorio" aria-hidden="true">*</span></label>
+        <input class="campo-input" type="password" id="senha" autocomplete="current-password" placeholder="Digite sua senha" required aria-required="true" />
+
+      </fieldset>
 
       <div class="lembrar">
         <input class="campo-checkbox" type="checkbox" id="lembrar" />
         <label class="campo-label" for="lembrar">Manter conectado</label>
       </div>
 
-      <button class="btn-entrar" type="submit">Entrar</button>
+      <button class="btn-entrar" type="submit" aria-label="Entrar na sua conta">Entrar</button>
 
       <p class="rodape-form">Não tem conta? <a class="link" href="cadastro.html">Cadastre-se</a></p>
       <a class="link" href="recuperar.html">Esqueceu sua senha?</a>
@@ -40,7 +47,7 @@
     </form>
   </main>
 
-  <footer>
+  <footer aria-label="Rodapé do site">
     <a class="link-footer" href="acessibilidade.html">Acessibilidade</a>
   </footer>
 

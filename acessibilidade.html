@@ -9,12 +9,14 @@
 </head>
 <body>
 
-  <header>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header aria-label="Cabeçalho do site">
     <h1>QueueSmart</h1>
     <p class="subtitle">Sistema Inteligente de Fila para Pequenos Negócios</p>
   </header>
 
-  <main>
+  <main id="conteudo-principal" aria-label="Declaração de acessibilidade">
     <h2>Declaração de Acessibilidade</h2>
 
     <p>
@@ -22,41 +24,51 @@
       ao maior número possível de pessoas, independentemente de deficiência, dispositivo ou contexto de uso.
     </p>
 
-    <h3>Nível de Conformidade</h3>
-    <p>
-      Este site busca atender ao padrão <strong>WCAG 2.2 Nível AA</strong> (Web Content Accessibility Guidelines),
-      desenvolvido pelo World Wide Web Consortium (W3C).
-    </p>
+    <section aria-labelledby="conformidade">
+      <h3 id="conformidade">Nível de Conformidade</h3>
+      <p>
+        Este site busca atender ao padrão <strong>WCAG 2.2 Nível AA</strong> (Web Content Accessibility Guidelines),
+        desenvolvido pelo World Wide Web Consortium (W3C).
+      </p>
+    </section>
 
-    <h3>Medidas Adotadas</h3>
-    <p>Entre as práticas de acessibilidade implementadas neste projeto, destacam-se:</p>
-    <p>— Contraste de cores mínimo de 4.5:1 para texto normal;</p>
-    <p>— Indicação visual e textual de campos obrigatórios;</p>
-    <p>— Navegação completa via teclado (TAB / SHIFT+TAB);</p>
-    <p>— Foco visível em todos os elementos interativos;</p>
-    <p>— Uso de HTML semântico com tags estruturais (header, main, footer);</p>
-    <p>— Formulários com labels associados a cada campo;</p>
-    <p>— Linguagem simples e clara em todo o conteúdo.</p>
+    <section aria-labelledby="medidas">
+      <h3 id="medidas">Medidas Adotadas</h3>
+      <p>Entre as práticas de acessibilidade implementadas neste projeto, destacam-se:</p>
+      <ul>
+        <li>Contraste de cores mínimo de 4.5:1 para texto normal;</li>
+        <li>Indicação visual e textual de campos obrigatórios;</li>
+        <li>Navegação completa via teclado (TAB / SHIFT+TAB);</li>
+        <li>Foco visível em todos os elementos interativos;</li>
+        <li>Uso de HTML semântico com tags estruturais (header, main, footer);</li>
+        <li>Formulários com labels associados a cada campo;</li>
+        <li>Linguagem simples e clara em todo o conteúdo.</li>
+      </ul>
+    </section>
 
-    <h3>Limitações Conhecidas</h3>
-    <p>
-      O projeto encontra-se em desenvolvimento ativo. Algumas funcionalidades como mensagens de erro
-      personalizadas e testes com leitores de tela ainda estão em fase de implementação e validação.
-    </p>
+    <section aria-labelledby="limitacoes">
+      <h3 id="limitacoes">Limitações Conhecidas</h3>
+      <p>
+        O projeto encontra-se em desenvolvimento ativo. Algumas funcionalidades como mensagens de erro
+        personalizadas e testes com leitores de tela ainda estão em fase de implementação e validação.
+      </p>
+    </section>
 
-    <h3>Contato e Feedback</h3>
-    <p>
-      Se você encontrar alguma barreira de acessibilidade neste site ou tiver sugestões de melhoria,
-      entre em contato com nossa equipe pelo e-mail:
-      <a class="link-email" href="mailto:queuesmart@gmail.com">queuesmart@gmail.com</a>
-    </p>
-    <p>
-      Nos comprometemos a responder em até 5 dias úteis e a trabalhar para resolver o problema relatado.
-    </p>
+    <section aria-labelledby="contato">
+      <h3 id="contato">Contato e Feedback</h3>
+      <p>
+        Se você encontrar alguma barreira de acessibilidade neste site ou tiver sugestões de melhoria,
+        entre em contato com nossa equipe pelo e-mail:
+        <a class="link-email" href="mailto:queuesmart@gmail.com">queuesmart@gmail.com</a>
+      </p>
+      <p>
+        Nos comprometemos a responder em até 5 dias úteis e a trabalhar para resolver o problema relatado.
+      </p>
+    </section>
   </main>
 
-  <footer>
-    <a class="link-footer" href="login.html">← Voltar ao Login</a>
+  <footer aria-label="Rodapé do site">
+      <a class="link-footer" href="login.html">← Voltar ao Login</a>
   </footer>
 
 </body>

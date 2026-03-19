@@ -9,38 +9,45 @@
 </head>
 <body>
 
-  <header>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header aria-label="Cabeçalho do site">
     <h1>QueueSmart</h1>
     <p class="subtitle">Sistema Inteligente de Fila para Pequenos Negócios</p>
   </header>
 
-  <main>
-    <form action="#" method="POST">
+  <main id="conteudo-principal" aria-label="Página de cadastro">
+    <form action="#" method="POST" aria-labelledby="titulo-cadastro">
 
-      <h2>Cadastre-se</h2>
+      <h2 id="titulo-cadastro">Cadastre-se</h2>
 
       <p class="nota-obrigatorio"><span aria-hidden="true">*</span> Campos obrigatórios</p>
 
-      <label class="campo-label" for="nome">Nome <span class="obrigatorio" aria-hidden="true">*</span></label>
-      <input class="campo-input" type="text" id="nome" autocomplete="name" placeholder="Digite seu nome" required aria-required="true" />
+      <fieldset>
+        <legend class="sr-only">Dados da nova conta</legend>
 
-      <label class="campo-label" for="email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
-      <input class="campo-input" type="email" id="email" autocomplete="email" placeholder="Digite seu email" required aria-required="true" />
+        <label class="campo-label" for="nome">Nome <span class="obrigatorio" aria-hidden="true">*</span></label>
+        <input class="campo-input" type="text" id="nome" autocomplete="name" placeholder="Digite seu nome" required aria-required="true" />
 
-      <label class="campo-label" for="senha">Senha <span class="obrigatorio" aria-hidden="true">*</span></label>
-      <input class="campo-input" type="password" id="senha" autocomplete="new-password" placeholder="Digite sua senha" required aria-required="true" />
+        <label class="campo-label" for="email">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
+        <input class="campo-input" type="email" id="email" autocomplete="email" placeholder="Digite seu email" required aria-required="true" />
 
-      <label class="campo-label" for="confirmarSenha">Confirme sua Senha <span class="obrigatorio" aria-hidden="true">*</span></label>
-      <input class="campo-input" type="password" id="confirmarSenha" autocomplete="new-password" placeholder="Confirme sua senha" required aria-required="true" />
+        <label class="campo-label" for="senha">Senha <span class="obrigatorio" aria-hidden="true">*</span></label>
+        <input class="campo-input" type="password" id="senha" autocomplete="new-password" placeholder="Digite sua senha" required aria-required="true" />
 
-      <button class="btn-entrar" type="submit">Cadastrar</button>
+        <label class="campo-label" for="confirmarSenha">Confirme sua Senha <span class="obrigatorio" aria-hidden="true">*</span></label>
+        <input class="campo-input" type="password" id="confirmarSenha" autocomplete="new-password" placeholder="Confirme sua senha" required aria-required="true" />
+
+      </fieldset>
+
+      <button class="btn-entrar" type="submit" aria-label="Criar nova conta">Cadastrar</button>
 
       <p class="rodape-form">Já possui uma conta? <a class="link" href="login.html">Entrar</a></p>
 
     </form>
   </main>
 
-  <footer>
+  <footer aria-label="Rodapé do site">
     <a class="link-footer" href="acessibilidade.html">Acessibilidade</a>
   </footer>
 
