@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QueueSmart - Cadastro</title>
+  <link rel="stylesheet" href="/css/cadastro.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <div class="page-wrapper">
+
+    <!-- Painel esquerdo: identidade visual (apenas desktop) -->
+    <div class="brand-panel" aria-hidden="true">
+      <span class="brand-logo">QueueSmart</span>
+      <div class="brand-tagline">
+        <p class="brand-eyebrow">Para pequenos negócios</p>
+        <h2>Comece a organizar suas filas hoje</h2>
+        <p class="brand-desc">Crie sua conta gratuita e tenha controle total do atendimento do seu negócio.</p>
+      </div>
+      <span class="brand-copy">Sistema Inteligente de Fila · 2025</span>
+    </div>
+
+    <!-- Painel direito: formulário -->
+    <div class="form-panel">
+
+      <!-- Cabeçalho visível apenas no mobile -->
+      <header class="mobile-header" aria-label="Cabeçalho do site">
+        <h1>QueueSmart</h1>
+        <p class="subtitle">Sistema Inteligente de Fila para Pequenos Negócios</p>
+      </header>
+
+      <main id="conteudo-principal" aria-label="Página de cadastro">
+        <form action="#" method="POST" aria-labelledby="titulo-cadastro">
+
+          <h2 id="titulo-cadastro">Criar conta</h2>
+          <p class="nota-obrigatorio"><span aria-hidden="true">*</span> Campos obrigatórios</p>
+
+          <fieldset>
+            <legend class="sr-only">Dados da nova conta</legend>
+
+            <label class="campo-label" for="nome">
+              Nome <span class="obrigatorio" aria-hidden="true">*</span>
+            </label>
+            <input class="campo-input" type="text" id="nome"
+              autocomplete="name" placeholder="Seu nome completo"
+              required aria-required="true" />
+
+            <label class="campo-label" for="email">
+              E-mail <span class="obrigatorio" aria-hidden="true">*</span>
+            </label>
+            <input class="campo-input" type="email" id="email"
+              autocomplete="email" placeholder="seu@email.com"
+              required aria-required="true" />
+
+            <label class="campo-label" for="senha">
+              Senha <span class="obrigatorio" aria-hidden="true">*</span>
+            </label>
+            <input class="campo-input" type="password" id="senha"
+              autocomplete="new-password" placeholder="••••••••"
+              required aria-required="true" />
+
+            <label class="campo-label" for="confirmarSenha">
+              Confirme sua senha <span class="obrigatorio" aria-hidden="true">*</span>
+            </label>
+            <input class="campo-input" type="password" id="confirmarSenha"
+              autocomplete="new-password" placeholder="••••••••"
+              required aria-required="true" />
+          </fieldset>
+
+          <button class="btn-entrar" type="submit">Criar conta</button>
+
+          <p class="rodape-form">
+            Já tem uma conta? <a class="link" href="/">Entrar</a>
+          </p>
+
+        </form>
+      </main>
+
+      <footer aria-label="Rodapé do site">
+        <a class="link-footer" href="/acessibilidade">Acessibilidade</a>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+</html>

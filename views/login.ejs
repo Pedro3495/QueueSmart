@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QueueSmart - Login</title>
+  <link rel="stylesheet" href="/css/login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <div class="page-wrapper">
+
+    <!-- Painel esquerdo: identidade visual (apenas desktop) -->
+    <div class="brand-panel" aria-hidden="true">
+      <span class="brand-logo">QueueSmart</span>
+      <div class="brand-tagline">
+        <p class="brand-eyebrow">Para pequenos negócios</p>
+        <h2>Gerencie filas com inteligência</h2>
+        <p class="brand-desc">Menos espera, mais satisfação — para você e seus clientes.</p>
+      </div>
+      <span class="brand-copy">Sistema Inteligente de Fila · 2025</span>
+    </div>
+
+    <!-- Painel direito: formulário -->
+    <div class="form-panel">
+
+      <!-- Cabeçalho visível apenas no mobile -->
+      <header class="mobile-header" aria-label="Cabeçalho do site">
+        <h1>QueueSmart</h1>
+        <p class="subtitle">Sistema Inteligente de Fila para Pequenos Negócios</p>
+      </header>
+
+      <main id="conteudo-principal" aria-label="Página de login">
+        <form action="#" method="POST" aria-labelledby="titulo-login">
+
+          <h2 id="titulo-login">Entrar</h2>
+          <p class="nota-obrigatorio"><span aria-hidden="true">*</span> Campos obrigatórios</p>
+
+          <fieldset>
+            <legend class="sr-only">Credenciais de acesso</legend>
+
+            <label class="campo-label" for="email">
+              E-mail <span class="obrigatorio" aria-hidden="true">*</span>
+            </label>
+            <input class="campo-input" type="email" id="email"
+              autocomplete="email" placeholder="seu@email.com"
+              required aria-required="true" />
+
+            <label class="campo-label" for="senha">
+              Senha <span class="obrigatorio" aria-hidden="true">*</span>
+            </label>
+            <input class="campo-input" type="password" id="senha"
+              autocomplete="current-password" placeholder="••••••••"
+              required aria-required="true" />
+          </fieldset>
+
+          <div class="form-row">
+            <div class="lembrar">
+              <input class="campo-checkbox" type="checkbox" id="lembrar" />
+              <label class="campo-label" for="lembrar">Manter conectado</label>
+            </div>
+            <a class="link-forgot" href="/recuperar">Esqueceu a senha?</a>
+          </div>
+
+          <button class="btn-entrar" type="submit">Entrar</button>
+
+          <p class="rodape-form">
+            Não tem conta? <a class="link" href="/cadastro">Cadastre-se</a>
+          </p>
+
+        </form>
+      </main>
+
+      <footer aria-label="Rodapé do site">
+        <a class="link-footer" href="/acessibilidade">Acessibilidade</a>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+</html>
