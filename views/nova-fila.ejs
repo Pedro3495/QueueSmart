@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QueueSmart - Nova Fila</title>
+  <link rel="stylesheet" href="/css/nova-fila.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="topbar" role="banner">
+    <a class="topbar-logo" href="/dashboard" aria-label="Voltar ao painel">QueueSmart</a>
+    <nav class="topbar-nav" aria-label="Navegação do usuário">
+      <a class="btn-voltar" href="/dashboard">← Painel</a>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal" class="main-content">
+
+    <section aria-labelledby="titulo-nova-fila">
+      <p class="eyebrow">Criar nova fila</p>
+      <h1 id="titulo-nova-fila">Nova fila</h1>
+      <p class="subtitulo">Preencha as informações abaixo para criar uma fila de atendimento.</p>
+    </section>
+
+    <% if (locals.erro) { %>
+      <div class="mensagem-erro" role="alert"><%= erro %></div>
+    <% } %>
+
+    <form class="formulario" action="/filas/nova" method="POST" aria-labelledby="titulo-nova-fila">
+      <fieldset>
+        <legend class="sr-only">Dados da nova fila</legend>
+
+        <label class="campo-label" for="nome">
+          Nome da fila <span class="obrigatorio" aria-hidden="true">*</span>
+        </label>
+        <input class="campo-input" type="text" id="nome" name="nome"
+          placeholder="Ex: Caixa 1, Corte de Cabelo…"
+          required aria-required="true" autocomplete="off" />
+
+        <label class="campo-label" for="descricao">
+          Descrição <span class="campo-opcional">(opcional)</span>
+        </label>
+        <textarea class="campo-textarea" id="descricao" name="descricao"
+          rows="3" placeholder="Descreva o tipo de atendimento desta fila…"
+          aria-describedby="dica-descricao"></textarea>
+        <span class="campo-dica" id="dica-descricao">Visível para os clientes ao entrar na fila.</span>
+
+      </fieldset>
+
+      <button class="btn-criar" type="submit">Criar fila</button>
+    </form>
+
+  </main>
+
+  <footer class="rodape" role="contentinfo">
+    <a class="link-footer" href="/acessibilidade">Acessibilidade</a>
+  </footer>
+
+</body>
+</html>

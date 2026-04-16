@@ -21,7 +21,7 @@
         <h2>Gerencie filas com inteligência</h2>
         <p class="brand-desc">Menos espera, mais satisfação — para você e seus clientes.</p>
       </div>
-      <span class="brand-copy">Sistema Inteligente de Fila · 2025</span>
+      <span class="brand-copy">Sistema Inteligente de Fila · 2026</span>
     </div>
 
     <!-- Painel direito: formulário -->
@@ -34,10 +34,14 @@
       </header>
 
       <main id="conteudo-principal" aria-label="Página de login">
-        <form action="#" method="POST" aria-labelledby="titulo-login">
+        <form action="/login" method="POST" aria-labelledby="titulo-login">
 
           <h2 id="titulo-login">Entrar</h2>
           <p class="nota-obrigatorio"><span aria-hidden="true">*</span> Campos obrigatórios</p>
+
+          <% if (locals.erro) { %>
+            <div class="mensagem-erro" role="alert"><%= erro %></div>
+          <% } %>
 
           <fieldset>
             <legend class="sr-only">Credenciais de acesso</legend>
@@ -45,14 +49,14 @@
             <label class="campo-label" for="email">
               E-mail <span class="obrigatorio" aria-hidden="true">*</span>
             </label>
-            <input class="campo-input" type="email" id="email"
+            <input class="campo-input" type="email" id="email" name="email"
               autocomplete="email" placeholder="seu@email.com"
               required aria-required="true" />
 
             <label class="campo-label" for="senha">
               Senha <span class="obrigatorio" aria-hidden="true">*</span>
             </label>
-            <input class="campo-input" type="password" id="senha"
+            <input class="campo-input" type="password" id="senha" name="senha"
               autocomplete="current-password" placeholder="••••••••"
               required aria-required="true" />
           </fieldset>

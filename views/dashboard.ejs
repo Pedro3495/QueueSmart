@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QueueSmart - Painel</title>
+  <link rel="stylesheet" href="/css/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- Cabeçalho de navegação fixo -->
+  <header class="topbar" role="banner">
+    <span class="topbar-logo" aria-label="QueueSmart">QueueSmart</span>
+    <nav class="topbar-nav" aria-label="Navegação do usuário">
+      <span class="topbar-usuario" aria-live="polite"><%= usuario.nome %></span>
+      <a class="btn-sair" href="/sair">Sair</a>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal" class="main-content">
+
+    <!-- Saudação -->
+    <section class="secao-boas-vindas" aria-labelledby="titulo-boas-vindas">
+      <p class="eyebrow">Painel do proprietário</p>
+      <h1 id="titulo-boas-vindas">Olá, <strong><%= usuario.nome.split(' ')[0] %></strong>.</h1>
+      <p class="subtitulo">Gerencie suas filas e acompanhe o atendimento.</p>
+    </section>
+
+    <!-- Filas cadastradas -->
+    <section class="secao-filas" aria-labelledby="titulo-filas">
+
+      <div class="filas-cabecalho">
+        <h2 id="titulo-filas">Suas filas</h2>
+        <a class="btn-nova-fila" href="/filas/nova" aria-label="Criar nova fila">+ Nova fila</a>
+      </div>
+
+      <ul class="lista-filas" role="list">
+
+        <% if (filas.length === 0) { %>
+          <li class="item-vazio">
+            <p class="vazio-texto">Nenhuma fila criada ainda.</p>
+            <a class="vazio-link" href="/filas/nova">Criar primeira fila →</a>
+          </li>
+        <% } else { %>
+          <% filas.forEach(function(fila) { %>
+            <li class="item-fila">
+              <div class="fila-info">
+                <span class="fila-nome"><%= fila.nome %></span>
+                <span class="fila-status">
+                  <span class="badge badge-ativa"><%= fila.status %></span>
+                  <span class="fila-contagem">0 clientes na fila</span>
+                </span>
+              </div>
+              <a class="btn-gerenciar" href="/filas/<%= fila.id %>" aria-label="Gerenciar <%= fila.nome %>">
+                Gerenciar <span aria-hidden="true">→</span>
+              </a>
+            </li>
+          <% }) %>
+        <% } %>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="rodape" role="contentinfo">
+    <a class="link-footer" href="/acessibilidade">Acessibilidade</a>
+  </footer>
+
+</body>
+</html>

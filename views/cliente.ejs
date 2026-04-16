@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QueueSmart - <%= fila.nome %></title>
+  <link rel="stylesheet" href="/css/cliente.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="topbar" role="banner">
+    <span class="topbar-logo">QueueSmart</span>
+    <nav class="topbar-nav" aria-label="Navegação do usuário">
+      <a class="btn-voltar" href="/dashboard">← Painel</a>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal" class="main-content">
+
+    <!-- Nome da fila -->
+    <section class="secao-cabecalho" aria-labelledby="titulo-fila">
+      <p class="eyebrow">Fila de atendimento</p>
+      <h1 id="titulo-fila"><%= fila.nome %></h1>
+      <% if (fila.descricao) { %>
+        <p class="subtitulo"><%= fila.descricao %></p>
+      <% } %>
+    </section>
+
+    <% if (minhaSenha) { %>
+      <!-- Usuário já está na fila -->
+      <section class="secao-posicao" aria-labelledby="titulo-posicao" aria-live="polite">
+        <h2 id="titulo-posicao" class="sr-only">Sua posição na fila</h2>
+
+        <% if (minhaSenha.status === 'chamado') { %>
+          <div class="card-chamado" role="alert">
+            <span class="chamado-icone" aria-hidden="true">🔔</span>
+            <p class="chamado-titulo">É a sua vez!</p>
+            <p class="chamado-desc">Dirija-se ao atendente agora.</p>
+          </div>
+
+        <% } else { %>
+          <div class="card-posicao">
+            <p class="posicao-rotulo">Sua posição</p>
+            <span class="posicao-numero" aria-label="Posição <%= minhaSenha.pos_atual %> na fila"><%= minhaSenha.pos_atual %></span>
+            <p class="posicao-status">Aguardando atendimento</p>
+          </div>
+        <% } %>
+
+        <p class="dica-atualizar">
+          <a class="link-atualizar" href="/cliente/<%= fila.id %>">Atualizar página</a> para ver sua posição atual.
+        </p>
+      </section>
+
+    <% } else { %>
+      <!-- Usuário ainda não entrou na fila -->
+      <section class="secao-entrar" aria-labelledby="titulo-entrar">
+        <h2 id="titulo-entrar" class="sr-only">Entrar na fila</h2>
+
+        <div class="card-entrar">
+          <p class="entrar-desc">Clique no botão abaixo para entrar na fila de atendimento.</p>
+          <form action="/cliente/<%= fila.id %>/entrar" method="POST">
+            <button class="btn-entrar" type="submit">Entrar na fila</button>
+          </form>
+        </div>
+      </section>
+    <% } %>
+
+  </main>
+
+  <footer class="rodape" role="contentinfo">
+    <a class="link-footer" href="/acessibilidade">Acessibilidade</a>
+  </footer>
+
+</body>
+</html>

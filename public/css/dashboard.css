@@ -1,0 +1,269 @@
+/* ── TOKENS ── */
+/* Os mesmos do login.css — isso é um sistema de design consistente */
+:root {
+  --green-950: #08321a;
+  --green-800: #0e5a2f;
+  --green-700: #1b7942;
+  --green-100: #edf8f2;
+  --text-dark:  #0f1f14;
+  --text-body:  #2d4a38;
+  --text-muted: #5f7d6b;
+  --text-faint: #8fa99a;
+  --border:     #c8e8d6;
+  --white:      #fdfffe;
+  --radius:     10px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── ACESSIBILIDADE ── */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+.skip-link {
+  position: absolute; top: -100%; left: 0;
+  background: var(--green-950); color: var(--white);
+  padding: 0.5rem 1rem; z-index: 9999;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.875rem; text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+/* ── BASE ── */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--white);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* permite o footer grudar no fundo */
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: var(--green-950);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar-logo {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.topbar-usuario {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-sair {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.375rem 0.875rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.btn-sair:hover { background: rgba(255, 255, 255, 0.18); }
+
+/* ── CONTEÚDO PRINCIPAL ── */
+.main-content {
+  flex: 1; /* ocupa o espaço restante, empurrando o footer para baixo */
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+/* ── BOAS-VINDAS ── */
+.secao-boas-vindas {
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--green-700);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.625rem;
+}
+
+.secao-boas-vindas h1 {
+  /* clamp(mínimo, preferido, máximo) — tipografia fluida */
+  font-size: clamp(1.875rem, 5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin-bottom: 0.625rem;
+}
+
+.subtitulo {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── SEÇÃO DE FILAS ── */
+.filas-cabecalho {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.filas-cabecalho h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn-nova-fila {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--green-700);
+  text-decoration: none;
+  padding: 0.3125rem 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.btn-nova-fila:hover {
+  border-color: var(--green-700);
+  background: var(--green-100);
+}
+
+/* ── LISTA DE FILAS ── */
+.lista-filas {
+  list-style: none;
+  border-top: 1.5px solid var(--border);
+}
+
+.item-fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.125rem 0;
+  border-bottom: 1.5px solid var(--border);
+  gap: 1rem;
+}
+
+.fila-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+}
+
+.fila-nome {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.fila-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 0.125rem 0.4375rem;
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.badge-ativa {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+.fila-contagem {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.btn-gerenciar {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--green-700);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0; /* não deixa o botão encolher em telas pequenas */
+  transition: color 0.15s ease;
+}
+.btn-gerenciar:hover { color: var(--green-800); }
+
+/* ── ESTADO VAZIO ── */
+.item-vazio {
+  padding: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-top: 1.5px solid var(--border);
+}
+.vazio-texto {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+.vazio-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--green-700);
+  text-decoration: none;
+}
+.vazio-link:hover { text-decoration: underline; }
+
+/* ── FOOTER ── */
+.rodape {
+  text-align: center;
+  padding: 1.5rem;
+}
+.link-footer {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.link-footer:hover { color: var(--green-700); }
+
+/* ── FOCO VISÍVEL (WCAG 2.2 AA) ── */
+:focus-visible {
+  outline: 2.5px solid var(--green-700);
+  outline-offset: 2px;
+}
+
+/* ── RESPONSIVIDADE ── */
+@media (min-width: 768px) {
+  .topbar { padding: 1.125rem 2.5rem; }
+  .main-content { padding: 3.5rem 2rem 4rem; }
+}
+
+/* ── MOVIMENTO REDUZIDO ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}

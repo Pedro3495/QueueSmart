@@ -21,7 +21,7 @@
         <h2>Comece a organizar suas filas hoje</h2>
         <p class="brand-desc">Crie sua conta gratuita e tenha controle total do atendimento do seu negócio.</p>
       </div>
-      <span class="brand-copy">Sistema Inteligente de Fila · 2025</span>
+      <span class="brand-copy">Sistema Inteligente de Fila · 2026</span>
     </div>
 
     <!-- Painel direito: formulário -->
@@ -34,10 +34,14 @@
       </header>
 
       <main id="conteudo-principal" aria-label="Página de cadastro">
-        <form action="#" method="POST" aria-labelledby="titulo-cadastro">
+        <form action="/cadastro" method="POST" aria-labelledby="titulo-cadastro">
 
           <h2 id="titulo-cadastro">Criar conta</h2>
           <p class="nota-obrigatorio"><span aria-hidden="true">*</span> Campos obrigatórios</p>
+
+          <% if (locals.erro) { %>
+            <div class="mensagem-erro" role="alert"><%= erro %></div>
+          <% } %>
 
           <fieldset>
             <legend class="sr-only">Dados da nova conta</legend>
@@ -45,28 +49,28 @@
             <label class="campo-label" for="nome">
               Nome <span class="obrigatorio" aria-hidden="true">*</span>
             </label>
-            <input class="campo-input" type="text" id="nome"
+            <input class="campo-input" type="text" id="nome" name="nome"
               autocomplete="name" placeholder="Seu nome completo"
               required aria-required="true" />
 
             <label class="campo-label" for="email">
               E-mail <span class="obrigatorio" aria-hidden="true">*</span>
             </label>
-            <input class="campo-input" type="email" id="email"
+            <input class="campo-input" type="email" id="email" name="email"
               autocomplete="email" placeholder="seu@email.com"
               required aria-required="true" />
 
             <label class="campo-label" for="senha">
               Senha <span class="obrigatorio" aria-hidden="true">*</span>
             </label>
-            <input class="campo-input" type="password" id="senha"
+            <input class="campo-input" type="password" id="senha" name="senha"
               autocomplete="new-password" placeholder="••••••••"
               required aria-required="true" />
 
             <label class="campo-label" for="confirmarSenha">
               Confirme sua senha <span class="obrigatorio" aria-hidden="true">*</span>
             </label>
-            <input class="campo-input" type="password" id="confirmarSenha"
+            <input class="campo-input" type="password" id="confirmarSenha" name="confirmarSenha"
               autocomplete="new-password" placeholder="••••••••"
               required aria-required="true" />
           </fieldset>
