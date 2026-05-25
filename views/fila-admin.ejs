@@ -14,6 +14,7 @@
   <header class="topbar" role="banner">
     <a class="topbar-logo" href="/dashboard" aria-label="Voltar ao painel">QueueSmart</a>
     <nav class="topbar-nav" aria-label="Navegação do usuário">
+      <a class="btn-voltar" href="/painel/<%= fila.id %>">Painel público</a>
       <a class="btn-voltar" href="/dashboard">← Painel</a>
     </nav>
   </header>
@@ -71,7 +72,9 @@
 
         <!-- Link para o cliente entrar na fila -->
         <div class="link-cliente-box">
-          <p class="link-cliente-descricao">Compartilhe este link com seus clientes:</p>
+          <p class="link-cliente-descricao">Painel público para TV ou recepção:</p>
+          <a class="link-cliente" href="/painel/<%= fila.id %>">/painel/<%= fila.id %></a>
+          <p class="link-cliente-descricao link-cliente-espaco">Compartilhe este link com seus clientes:</p>
           <a class="link-cliente" href="/cliente/<%= fila.id %>">/cliente/<%= fila.id %></a>
         </div>
       <% } else { %>
@@ -86,7 +89,9 @@
         </ul>
 
         <div class="link-cliente-box">
-          <p class="link-cliente-descricao">Link para novos clientes:</p>
+          <p class="link-cliente-descricao">Painel público para TV ou recepção:</p>
+          <a class="link-cliente" href="/painel/<%= fila.id %>">/painel/<%= fila.id %></a>
+          <p class="link-cliente-descricao link-cliente-espaco">Link para novos clientes:</p>
           <a class="link-cliente" href="/cliente/<%= fila.id %>">/cliente/<%= fila.id %></a>
         </div>
       <% } %>

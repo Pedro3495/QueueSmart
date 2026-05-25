@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="20" />
+  <title>QueueSmart - Painel de <%= fila.nome %></title>
+  <link rel="stylesheet" href="/css/painel.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <header class="topbar" role="banner">
+    <span class="topbar-logo">QueueSmart</span>
+    <span class="topbar-status" aria-label="Painel atualizado automaticamente">Painel público</span>
+  </header>
+
+  <main id="conteudo-principal" class="main-content">
+
+    <section class="hero-fila" aria-labelledby="titulo-fila">
+      <p class="eyebrow">Fila de atendimento</p>
+      <h1 id="titulo-fila"><%= fila.nome %></h1>
+      <% if (fila.descricao) { %>
+        <p class="subtitulo"><%= fila.descricao %></p>
+      <% } %>
+    </section>
+
+    <section class="painel-chamada" aria-labelledby="titulo-chamada" aria-live="polite">
+      <h2 id="titulo-chamada">Agora chamando</h2>
+
+      <% if (chamadoAtual) { %>
+        <div class="chamado-card">
+          <span class="chamado-posicao" aria-label="Posição <%= chamadoAtual.posicao %>">#<%= chamadoAtual.posicao %></span>
+          <strong class="chamado-nome"><%= chamadoAtual.nome %></strong>
+          <span class="chamado-instrucao">Dirija-se ao atendimento</span>
+        </div>
+      <% } else { %>
+        <div class="chamado-card chamado-card-vazio">
+          <strong class="chamado-nome">Aguardando chamada</strong>
+          <span class="chamado-instrucao">O próximo cliente será exibido aqui</span>
+        </div>
+      <% } %>
+    </section>
+
+    <section class="resumo-fila" aria-label="Resumo da fila">
+      <div class="contador">
+        <span class="contador-numero"><%= aguardando.length %></span>
+        <span class="contador-label">aguardando</span>
+      </div>
+      <div class="contador">
+        <span class="contador-numero"><%= chamados.length %></span>
+        <span class="contador-label">chamados</span>
+      </div>
+    </section>
+
+    <section class="proximos" aria-labelledby="titulo-proximos">
+      <h2 id="titulo-proximos">Próximos da fila</h2>
+
+      <% if (aguardando.length === 0) { %>
+        <p class="lista-vazia">Nenhum cliente aguardando no momento.</p>
+      <% } else { %>
+        <ol class="lista-proximos">
+          <% aguardando.slice(0, 5).forEach(function(cliente) { %>
+            <li class="proximo-item">
+              <span class="proximo-posicao">#<%= cliente.posicao %></span>
+              <span class="proximo-nome"><%= cliente.nome %></span>
+            </li>
+          <% }) %>
+        </ol>
+      <% } %>
+    </section>
+
+    <section class="entrada-cliente" aria-label="Entrada de novos clientes">
+      <p>Para entrar nesta fila, acesse:</p>
+      <a href="/cliente/<%= fila.id %>">/cliente/<%= fila.id %></a>
+    </section>
+
+  </main>
+
+  <footer class="rodape" role="contentinfo">
+    <a class="link-footer" href="/acessibilidade">Acessibilidade</a>
+  </footer>
+
+</body>
+</html>

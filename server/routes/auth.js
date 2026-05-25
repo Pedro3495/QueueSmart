@@ -12,7 +12,7 @@ router.post('/cadastro', async (req, res) => {
 
         const hash = await bcrypt.hash(senha, 10)
 
-        await pool.query(
+        await pool.query(   
             'INSERT INTO usuarios (nome, email, senha) VALUES ($1, $2, $3)',
             [nome, email, hash]
         )
@@ -72,6 +72,46 @@ router.get('/dashboard', async (req, res) => {
 router.get('/sair', (req, res) => {
     req.session.destroy()
     res.redirect('/')
+})
+
+router.get('/painel', (req, res) => {
+    res.redirect('/dashboard')
+})
+
+router.get('/painel/:filaId', async (req, res) => {
+    try {
+        const filaRes = await pool.query(
+            'SELECT * FROM filas WHERE id = $1',
+            [req.params.filaId]
+        )
+
+        if (filaRes.r   ows.length === 0) {
+            return res.redirect('/')
+        }
+
+        const clientesRes = await pool.query(
+            `SELECT sf.id, sf.posicao, sf.status, u.nome
+             FROM senhas_fila sf
+             JOIN usuarios u ON u.id = sf.usuario_id
+             WHERE sf.fila_id = $1 AND sf.status != 'finalizado'
+             ORDER BY sf.posicao ASC`,
+            [req.params.filaId]
+        )
+
+        const clientes = clientesRes.rows
+        const aguardando = clientes.filter(cliente => cliente.status === 'aguardando')
+        const chamados = clientes.filter(cliente => cliente.status === 'chamado')
+
+        res.render('painel', {
+            fila: filaRes.rows[0],
+            aguardando,
+            chamados,
+            chamadoAtual: chamados[chamados.length - 1] || null
+        })
+    } catch (err) {
+        console.error(err)
+        res.redirect('/')
+    }
 })
 
 router.get('/', (req, res) => {

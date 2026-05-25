@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>QueueSmart - Relatório de Validação da Solução e Preço</title>
+  <style>
+    @page { size: A4; margin: 18mm 14mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #102015;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11.5pt;
+      line-height: 1.45;
+    }
+    h1, h2, h3 { color: #08321a; line-height: 1.2; page-break-after: avoid; }
+    h1 { margin: 0 0 8px; font-size: 20pt; }
+    h2 { margin: 22px 0 8px; font-size: 15pt; border-bottom: 2px solid #c8e8d6; padding-bottom: 4px; }
+    h3 { margin: 14px 0 6px; font-size: 12pt; }
+    p { margin: 5px 0 9px; }
+    ul { margin: 5px 0 10px 20px; padding: 0; }
+    li { margin: 3px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0 14px; page-break-inside: avoid; }
+    th, td { border: 1px solid #39493e; padding: 6px 7px; vertical-align: top; font-size: 9.5pt; }
+    th { background: #edf8f2; color: #08321a; text-align: left; }
+    code { font-family: Consolas, "Courier New", monospace; font-size: 9.5pt; }
+    .meta {
+      margin: 12px 0 18px;
+      padding: 10px 12px;
+      border-left: 5px solid #1b7942;
+      background: #f2fbf5;
+    }
+    .ok { color: #0e5a2f; font-weight: 700; }
+    .parcial { color: #8a5a00; font-weight: 700; }
+    .risco { color: #9b1c1c; font-weight: 700; }
+    .small { color: #4a5f50; font-size: 9.5pt; }
+  </style>
+</head>
+<body>
+  <h1>Relatório de Validação da Solução e Preço</h1>
+  <p><strong>Projeto:</strong> QueueSmart - sistema web para gerenciamento de filas.</p>
+  <p><strong>Data:</strong> 25 de maio de 2026.</p>
+
+  <div class="meta">
+    <p><strong>Objetivo do relatório:</strong> validar a solução desenvolvida, verificar aderência aos requisitos da terceira avaliação e apresentar uma proposta inicial de preço para o produto.</p>
+    <p><strong>Escopo validado:</strong> aplicação Node.js/Express com templates EJS, banco PostgreSQL, autenticação por sessão, criação de filas, entrada de clientes, chamada de atendimento, painel público e página de acessibilidade.</p>
+  </div>
+
+  <h2>1. Problema Identificado</h2>
+  <p>Pequenos negócios, clínicas, setores acadêmicos e ambientes de atendimento presencial frequentemente controlam filas com papel, comunicação verbal ou planilhas improvisadas. Esse processo gera pouca previsibilidade para o cliente, dificuldade de organização para o atendente e risco de erro na ordem de chamada.</p>
+  <p>O QueueSmart resolve esse problema com uma aplicação simples: o responsável cria uma fila, compartilha o link com os clientes, acompanha os participantes e chama o próximo atendimento. O cliente consegue entrar na fila e visualizar sua posição.</p>
+
+  <h2>2. Solução Desenvolvida</h2>
+  <p>O sistema foi implementado como uma aplicação web com renderização no servidor. O fluxo principal é:</p>
+  <ul>
+    <li>cadastro e login de usuário administrador;</li>
+    <li>acesso ao dashboard com filas cadastradas;</li>
+    <li>criação de nova fila com nome e descrição;</li>
+    <li>gerenciamento da fila pelo administrador;</li>
+    <li>entrada do cliente na fila por link;</li>
+    <li>acompanhamento da posição pelo cliente;</li>
+    <li>chamada do próximo cliente;</li>
+    <li>exibição do painel público de chamada para recepção, TV ou balcão.</li>
+  </ul>
+
+  <h2>3. Páginas Funcionais Entregues</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Página</th><th>Rota</th><th>Função</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Login</td><td><code>GET /</code></td><td>Permite autenticação do usuário.</td></tr>
+      <tr><td>2</td><td>Cadastro</td><td><code>GET /cadastro</code></td><td>Permite criação de conta.</td></tr>
+      <tr><td>3</td><td>Dashboard</td><td><code>GET /dashboard</code></td><td>Lista filas do usuário autenticado.</td></tr>
+      <tr><td>4</td><td>Nova fila</td><td><code>GET /filas/nova</code></td><td>Exibe formulário de criação de fila.</td></tr>
+      <tr><td>5</td><td>Administração da fila</td><td><code>GET /filas/:id</code></td><td>Mostra clientes, status e ação de chamar próximo.</td></tr>
+      <tr><td>6</td><td>Cliente na fila</td><td><code>GET /cliente/:filaId</code></td><td>Permite entrada e acompanhamento de posição.</td></tr>
+      <tr><td>7</td><td>Painel público</td><td><code>GET /painel/:filaId</code></td><td>Exibe chamada atual, contadores e próximos da fila.</td></tr>
+      <tr><td>8</td><td>Acessibilidade</td><td><code>GET /acessibilidade</code></td><td>Informa práticas de acessibilidade adotadas.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Validação Técnica</h2>
+  <table>
+    <thead>
+      <tr><th>Item Validado</th><th>Evidência</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Estrutura da aplicação</td><td>Projeto organizado em <code>server.js</code>, <code>server/routes</code>, <code>views</code> e <code>public/css</code>.</td><td class="ok">OK</td></tr>
+      <tr><td>Sintaxe JavaScript</td><td><code>node --check</code> executado nos arquivos principais.</td><td class="ok">OK</td></tr>
+      <tr><td>Renderização da nova página</td><td><code>painel.ejs</code> renderizado com dados simulados e testado via navegador.</td><td class="ok">OK</td></tr>
+      <tr><td>Resposta HTTP do painel</td><td><code>GET /painel/1</code> retornou <code>200 OK</code> no ambiente local.</td><td class="ok">OK</td></tr>
+      <tr><td>Testes automatizados</td><td>O projeto ainda não possui suíte formal em <code>npm test</code>.</td><td class="parcial">Parcial</td></tr>
+    </tbody>
+  </table>
+
+  <h2>5. Acessibilidade WCAG 2.2</h2>
+  <p>O requisito de acessibilidade contemplado com maior evidência é o uso correto de HTML e navegação por teclado. As telas usam elementos semânticos como <code>header</code>, <code>main</code>, <code>section</code>, <code>nav</code> e <code>footer</code>, além de formulários com <code>label</code> associado aos campos.</p>
+  <p>Também há links de salto para o conteúdo principal, foco visível em elementos interativos e página dedicada de acessibilidade. O painel público utiliza <code>aria-live="polite"</code> para comunicar alterações da chamada atual, reforçando feedback para tecnologias assistivas.</p>
+
+  <h2>6. Usabilidade Observada</h2>
+  <table>
+    <thead>
+      <tr><th>Critério</th><th>Como o sistema atende</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Clareza e compreensão</td><td>Telas separadas por objetivo: login, cadastro, dashboard, criação, administração, cliente e painel.</td><td class="ok">OK</td></tr>
+      <tr><td>Consistência</td><td>Uso de identidade visual verde, fonte Plus Jakarta Sans e CSS por página.</td><td class="ok">OK</td></tr>
+      <tr><td>Navegação</td><td>Fluxo principal acessível por links e botões visíveis; tela admin aponta para cliente e painel público.</td><td class="ok">OK</td></tr>
+      <tr><td>Feedback do sistema</td><td>Mostra posição, status de chamado, contadores e mensagem quando não há clientes aguardando.</td><td class="ok">OK</td></tr>
+      <tr><td>Prevenção/tratamento de erros</td><td>Há validação de senha no cadastro e bloqueio de acesso a filas sem autenticação; mensagens ainda podem ser melhoradas.</td><td class="parcial">Parcial</td></tr>
+      <tr><td>Facilidade de uso</td><td>Interface simples, com poucas ações por tela e linguagem direta.</td><td class="ok">OK</td></tr>
+    </tbody>
+  </table>
+
+  <h2>7. Validação da Solução</h2>
+  <p>A solução atende ao núcleo do problema proposto: organizar filas digitais para pequenos atendimentos. O administrador consegue criar e controlar filas; o cliente consegue entrar e acompanhar sua situação; o painel público torna a solução mais próxima de uso real em recepção.</p>
+  <p>Como limitações, ainda não há atualização em tempo real por WebSocket, finalização completa de atendimento, cancelamento de entrada pelo cliente e suíte automatizada de testes. Mesmo assim, para o escopo acadêmico, a aplicação demonstra continuidade de desenvolvimento e entrega oito páginas funcionais.</p>
+
+  <h2>8. Proposta de Preço</h2>
+  <p>O modelo recomendado é SaaS mensal para pequenos negócios, com plano gratuito para entrada e planos pagos conforme volume de filas e recursos.</p>
+  <table>
+    <thead>
+      <tr><th>Plano</th><th>Preço sugerido</th><th>Inclui</th><th>Público</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Gratuito</td><td>R$ 0/mês</td><td>1 fila ativa, painel público básico e até 50 entradas/mês.</td><td>Validação inicial e pequenos atendimentos.</td></tr>
+      <tr><td>Essencial</td><td>R$ 29,90/mês</td><td>Até 5 filas, painel público, histórico básico e suporte por e-mail.</td><td>Pequenos comércios e serviços locais.</td></tr>
+      <tr><td>Profissional</td><td>R$ 79,90/mês</td><td>Filas ilimitadas, relatórios, personalização visual e prioridade de suporte.</td><td>Clínicas, escolas e negócios com maior fluxo.</td></tr>
+    </tbody>
+  </table>
+  <p>A precificação é compatível com um produto de baixo custo operacional, fácil adoção e foco em estabelecimentos que precisam organizar atendimento sem investir em equipamentos caros.</p>
+
+  <h2>9. Conclusão</h2>
+  <p>O QueueSmart está validado como protótipo funcional para a terceira avaliação. A aplicação possui oito páginas funcionais, contempla requisito de acessibilidade, apresenta fluxo claro de uso e inclui documentação de validação e proposta de preço. O próximo passo de evolução seria implementar atualização em tempo real, histórico de atendimentos e testes automatizados.</p>
+
+  <p class="small"><strong>Referências:</strong> documentação local do QueueSmart, análise comparativa de acessibilidade/usabilidade do projeto e WCAG 2.2.</p>
+</body>
+</html>

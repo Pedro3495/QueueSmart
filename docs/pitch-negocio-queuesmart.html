@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>QueueSmart - Pitch do Negócio</title>
+  <style>
+    @page { size: A4 landscape; margin: 0; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f5faf7;
+      color: #0f1f14;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .slide {
+      width: 297mm;
+      height: 210mm;
+      page-break-after: always;
+      padding: 18mm 22mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #fdfffe;
+    }
+    .slide:last-child { page-break-after: auto; }
+    .dark { background: #08321a; color: #fdfffe; }
+    .dark h1, .dark h2, .dark p, .dark li { color: #fdfffe; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #1b7942;
+      font-size: 14pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .dark .eyebrow { color: #8fe0ad; }
+    h1 {
+      margin: 0 0 18px;
+      color: #08321a;
+      font-size: 42pt;
+      line-height: 1.05;
+    }
+    h2 {
+      margin: 0 0 18px;
+      color: #08321a;
+      font-size: 34pt;
+      line-height: 1.08;
+    }
+    h3 {
+      margin: 0 0 8px;
+      color: #08321a;
+      font-size: 18pt;
+    }
+    p {
+      margin: 0 0 12px;
+      max-width: 850px;
+      color: #2d4a38;
+      font-size: 18pt;
+      line-height: 1.35;
+    }
+    ul {
+      margin: 4px 0 0 24px;
+      padding: 0;
+      max-width: 920px;
+    }
+    li {
+      margin: 8px 0;
+      color: #2d4a38;
+      font-size: 18pt;
+      line-height: 1.35;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card {
+      min-height: 120px;
+      padding: 18px;
+      border: 2px solid #c8e8d6;
+      border-radius: 8px;
+      background: #edf8f2;
+    }
+    .card p, .card li { font-size: 14pt; }
+    .metric {
+      display: block;
+      margin-bottom: 6px;
+      color: #0e5a2f;
+      font-size: 30pt;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .price {
+      color: #0e5a2f;
+      font-size: 28pt;
+      font-weight: 700;
+    }
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .step {
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: #edf8f2;
+      border: 2px solid #c8e8d6;
+      color: #08321a;
+      font-size: 15pt;
+      font-weight: 700;
+    }
+    .arrow { color: #1b7942; font-size: 20pt; font-weight: 700; }
+    .foot {
+      margin-top: 28px;
+      color: #5f7d6b;
+      font-size: 12pt;
+    }
+  </style>
+</head>
+<body>
+  <section class="slide dark">
+    <p class="eyebrow">Pitch do negócio</p>
+    <h1>QueueSmart</h1>
+    <p>Sistema web para organizar filas de atendimento de forma simples, acessível e barata para pequenos negócios.</p>
+    <p class="foot">Terceira Avaliação - Aplicação web, validação da solução e modelo de preço.</p>
+  </section>
+
+  <section class="slide">
+    <p class="eyebrow">Problema</p>
+    <h2>Filas mal organizadas custam tempo, confiança e atendimento.</h2>
+    <ul>
+      <li>Clientes não sabem sua posição ou quando serão chamados.</li>
+      <li>Atendentes controlam ordem com papel, voz ou planilhas improvisadas.</li>
+      <li>Pequenos negócios precisam de uma solução simples, sem equipamento caro.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <p class="eyebrow">Solução</p>
+    <h2>Uma fila digital que funciona direto no navegador.</h2>
+    <div class="flow">
+      <span class="step">Criar conta</span>
+      <span class="arrow">></span>
+      <span class="step">Criar fila</span>
+      <span class="arrow">></span>
+      <span class="step">Compartilhar link</span>
+      <span class="arrow">></span>
+      <span class="step">Cliente entra</span>
+      <span class="arrow">></span>
+      <span class="step">Atendente chama</span>
+      <span class="arrow">></span>
+      <span class="step">Painel exibe</span>
+    </div>
+    <p class="foot">O QueueSmart reduz a confusão operacional e dá feedback claro para cliente e atendente.</p>
+  </section>
+
+  <section class="slide">
+    <p class="eyebrow">Produto</p>
+    <h2>O que já está funcional</h2>
+    <div class="grid two">
+      <div class="card"><h3>Admin</h3><p>Cadastro, login, dashboard, criação de fila e gerenciamento dos clientes.</p></div>
+      <div class="card"><h3>Cliente</h3><p>Entrada na fila por link e acompanhamento da posição no atendimento.</p></div>
+      <div class="card"><h3>Painel público</h3><p>Tela para TV, recepção ou balcão com chamada atual e próximos da fila.</p></div>
+      <div class="card"><h3>Acessibilidade</h3><p>HTML semântico, labels, foco visível, link de salto e página dedicada.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <p class="eyebrow">Público-alvo</p>
+    <h2>Negócios pequenos que atendem por ordem de chegada.</h2>
+    <div class="grid">
+      <div class="card"><span class="metric">1</span><p>Clínicas, consultórios e serviços de saúde.</p></div>
+      <div class="card"><span class="metric">2</span><p>Barbearias, salões, assistência técnica e lojas locais.</p></div>
+      <div class="card"><span class="metric">3</span><p>Secretarias, laboratórios, coordenações e setores acadêmicos.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <p class="eyebrow">Diferenciais</p>
+    <h2>Simples para implantar, claro para usar.</h2>
+    <ul>
+      <li>Não exige aplicativo instalado pelo cliente.</li>
+      <li>Painel público melhora comunicação no ambiente físico.</li>
+      <li>Baixo custo para pequenos negócios.</li>
+      <li>Base com acessibilidade desde o protótipo.</li>
+      <li>Fluxo direto: poucas telas, poucas decisões e feedback objetivo.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <p class="eyebrow">Modelo de negócio</p>
+    <h2>SaaS mensal com plano de entrada gratuito.</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Gratuito</h3>
+        <p class="price">R$ 0</p>
+        <p>1 fila ativa e até 50 entradas por mês.</p>
+      </div>
+      <div class="card">
+        <h3>Essencial</h3>
+        <p class="price">R$ 29,90/mês</p>
+        <p>Até 5 filas, painel público e suporte por e-mail.</p>
+      </div>
+      <div class="card">
+        <h3>Profissional</h3>
+        <p class="price">R$ 79,90/mês</p>
+        <p>Filas ilimitadas, relatórios e personalização visual.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <p class="eyebrow">Validação</p>
+    <h2>A aplicação já demonstra o fluxo completo.</h2>
+    <div class="grid">
+      <div class="card"><span class="metric">8</span><p>páginas funcionais entregues.</p></div>
+      <div class="card"><span class="metric">WCAG</span><p>uso de HTML correto, foco visível e navegação por teclado.</p></div>
+      <div class="card"><span class="metric">JS</span><p>backend Node.js/Express com EJS e PostgreSQL.</p></div>
+    </div>
+    <p class="foot">Validação técnica feita com checagem de sintaxe, renderização de template e teste HTTP local.</p>
+  </section>
+
+  <section class="slide">
+    <p class="eyebrow">Roadmap</p>
+    <h2>Próximos passos para virar produto real</h2>
+    <ul>
+      <li>Atualização em tempo real com polling ou WebSocket.</li>
+      <li>Opção para cliente sair da fila.</li>
+      <li>Histórico de atendimentos e relatório de fluxo.</li>
+      <li>QR Code para entrada rápida.</li>
+      <li>Testes automatizados e deploy em ambiente público.</li>
+    </ul>
+  </section>
+
+  <section class="slide dark">
+    <p class="eyebrow">Fechamento</p>
+    <h2>QueueSmart organiza filas sem complicar o atendimento.</h2>
+    <p>Um produto simples, acessível e com potencial comercial para pequenos negócios que precisam reduzir espera, melhorar comunicação e profissionalizar o atendimento.</p>
+  </section>
+</body>
+</html>
