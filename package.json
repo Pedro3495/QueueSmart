@@ -2,9 +2,11 @@
   "name": "queuesmart",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "check": "node --check server.js && node --check server/db.js && node --check server/routes/auth.js && node --check server/routes/filas.js",
+    "test": "npm run check"
   },
   "repository": {
     "type": "git",
